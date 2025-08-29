@@ -4,23 +4,23 @@
   <meta charset="utf-8">
   <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
   <!-- Replace the content tag with appropriate information -->
-  <meta name="description" content="DESCRIPTION META TAG">
-  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
-  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
+  <meta name="description" content="UGDNet: A Unified Geometry-Decoupled Network for Compressed Depth Upsampling">
+  <meta property="og:title" content="UGDNet: A Unified Geometry-Decoupled Network for Compressed Depth Upsampling"/>
+  <meta property="og:description" content="High-fidelity 3D perception from compressed data is crucial for advanced applications. However, the practical utility of this data is severely hampered by significant degradation, stemming from aggressive spatial downsampling, bit-depth reduction, and injected noise during acquisition and transmission."/>
   <meta property="og:url" content="URL OF THE WEBSITE"/>
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
-  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image" content="static/images/framework.PNG" />
   <meta property="og:image:width" content="1200"/>
   <meta property="og:image:height" content="630"/>
 
 
-  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
-  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <meta name="twitter:title" content="UGDNet: A Unified Geometry-Decoupled Network for Compressed Depth Upsampling">
+  <meta name="twitter:description" content="High-fidelity 3D perception from compressed data is crucial for advanced applications. However, the practical utility of this data is severely hampered by significant degradation, stemming from aggressive spatial downsampling, bit-depth reduction, and injected noise during acquisition and transmission.">
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
-  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:image" content="static/images/framework.PNG">
   <meta name="twitter:card" content="summary_large_image">
   <!-- Keywords for your paper to be indexed by-->
-  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="keywords" content="Depth Super-Resolution, Compressed Depth, Low-Rank Representation, Geometry Decoupling">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
@@ -76,7 +76,7 @@
                     <div class="publication-links">
                          <!-- Arxiv PDF link -->
                       <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
+                        <a href="https://arxiv.org/pdf/2409.07298" target="_blank"
                         class="external-link button is-normal is-rounded is-dark">
                         <span class="icon">
                           <i class="fas fa-file-pdf"></i>
@@ -98,7 +98,7 @@
 
                   <!-- Github link -->
                   <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                    <a href="https://github.com/zhuanghongji/UGDNet" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -109,7 +109,7 @@
 
                 <!-- ArXiv abstract Link -->
                 <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                  <a href="https://arxiv.org/abs/2409.07298" target="_blank"
                   class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                     <i class="ai ai-arxiv"></i>
@@ -152,31 +152,28 @@
       <div class="columns is-centered">
         <div class="column is-four-fifths">
           <div class="image-container">
-            <!-- 第一张图片 -->
-            <figure class="image">
-              <img src="static/images/motivation.PNG" alt="项目动机"/>
-              <h2 class="subtitle has-text-centered">
-              </h2>
-            </figure>
+            <!-- 动机图和TDR模块 -->
+            <div class="columns">
+              <div class="column is-half">
+                <figure class="image">
+                  <img src="static/images/motivation.PNG" alt="项目动机"/>
+                </figure>
+              </div>
+              <div class="column is-half">
+                <figure class="image">
+                  <img src="static/images/tdr.PNG" alt="TDR模块"/>
+                </figure>
+              </div>
+            </div>
             
-            <!-- 第二张图片 -->
+            <!-- 框架图 -->
             <figure class="image">
               <img src="static/images/framework.PNG" alt="框架结构"/>
-              <h2 class="subtitle has-text-centered">
-              </h2>
             </figure>
             
-            <!-- 第三张图片 -->
+            <!-- CoT图 -->
             <figure class="image">
-              <img src="static/images/CoT.PNG" alt="思维链"/>
-              <h2 class="subtitle has-text-centered">
-              </h2>
-            </figure>
-
-            <figure class="image">
-              <img src="static/images/dataset.PNG" alt="数据集"/>
-              <h2 class="subtitle has-text-centered">
-              </h2>
+              <img src="static/images/modules.PNG" alt="模块设计"/>
             </figure>
           </div>
         </div>
@@ -193,27 +190,30 @@
       <div class="columns is-centered">
         <div class="column is-four-fifths">
           <div class="image-container">
-            <!-- 第一张图片 -->
-            <figure class="image">
-              <img src="static/images/table6.PNG" alt="项目动机"/>
-              <h2 class="subtitle has-text-centered">
-              </h2>
-            </figure>
-            
-            <!-- 第三张和第四张图片横向排列 -->
+            <!-- 表格6 -->
             <div class="columns">
               <div class="column is-half">
                 <figure class="image">
-                  <img src="static/images/table2.PNG" alt="表格2"/>
-                  <h2 class="subtitle has-text-centered">
-                  </h2>
+                  <img src="static/images/tab1.PNG" alt="整体比较"/>
                 </figure>
               </div>
               <div class="column is-half">
                 <figure class="image">
-                  <img src="static/images/table3.PNG" alt="表格3"/>
-                  <h2 class="subtitle has-text-centered">
-                  </h2>
+                  <img src="static/images/fig8.PNG" alt="消融研究"/>
+                </figure>
+              </div>
+            </div>
+            
+            <!-- 表格2和3横向排列 -->
+            <div class="columns">
+              <div class="column is-half">
+                <figure class="image">
+                  <img src="static/images/tab2.PNG" alt="表格2"/>
+                </figure>
+              </div>
+              <div class="column is-half">
+                <figure class="image">
+                  <img src="static/images/tab3.PNG" alt="表格3"/>
                 </figure>
               </div>
             </div>
@@ -221,26 +221,39 @@
             <div class="columns">
               <div class="column is-half">
                 <figure class="image">
-                  <img src="static/images/table4.PNG" alt="表格4"/>
-                  <h2 class="subtitle has-text-centered">
-                  </h2>
+                  <img src="static/images/tab4.PNG" alt="表格4"/>
                 </figure>
               </div>
               <div class="column is-half">
                 <figure class="image">
-                  <img src="static/images/table5.PNG" alt="表格5"/>
-                  <h2 class="subtitle has-text-centered">
-                  </h2>
+                  <img src="static/images/tab7.PNG" alt="表格7"/>
                 </figure>
               </div>
             </div>
             
-            <!-- 移动到最后的图片 -->
+            <!-- 新增的tab6和调整位置后的tab5图片 -->
+            <div class="columns">
+              <div class="column is-half">
+                <figure class="image">
+                  <img src="static/images/tab6.PNG" alt="表格6"/>
+                </figure>
+              </div>
+              <div class="column is-half">
+                <figure class="image">
+                  <img src="static/images/tab5.PNG" alt="表格5"/>
+                </figure>
+              </div>
+            </div>
+            
+            <!-- 可视化结果 -->
             <figure class="image">
-              <img src="static/images/vis.PNG" alt="可视化结果"/>
-              <h2 class="subtitle has-text-centered">
-              </h2>
+              <img src="static/images/fig6.PNG" alt="可视化结果"/>
             </figure>
+            
+            <figure class="image">
+              <img src="static/images/fig7.PNG" alt="视频结果"/>
+            </figure>
+            
           </div>
         </div>
       </div>
@@ -334,10 +347,10 @@
           <i class="fas fa-copy"></i> Copy
         </button>
         <pre><code id="bibtex-content">@article{zheng2025ugdnet,
-      title={UGDNet: A Unified Geometry-Decoupled Network for Compressed Depth Upsampling},
-      author={Huan Zheng, Wencheng Han, Steven C. H. Hoi, Jianbing},
-      journal={arXiv preprint},
-      year={2025}
+  title={UGDNet: A Unified Geometry-Decoupled Network for Compressed Depth Upsampling},
+  author={Zheng, Huan and Han, Wencheng and Hoi, Steven C. H. and Shen, Jianbing},
+  journal={arxiv},
+  year={2025},
 }</code></pre>
       </div>
     </div>

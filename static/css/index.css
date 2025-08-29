@@ -1,7 +1,34 @@
-body {
-  font-family: 'Noto Sans', sans-serif;
+body {.footer {
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  padding: 3rem 1.5rem;
+  margin-top: 2rem;
 }
 
+.footer a {
+  color: #3498db;
+}
+
+.footer a:hover {
+  color: #5dade2;
+}
+
+.publication-links {
+  margin: 1.5rem 0;
+}
+
+.author-block sup {
+  margin-left: 2px;
+}
+
+.hero {
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4edf9 100%);
+}
+  font-family: 'Noto Sans', sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+}
 
 .footer .icon-link {
     font-size: 25px;
@@ -29,6 +56,12 @@ body {
 
 
 .publication-title {
+    font-family: 'Google Sans', sans-serif;
+    font-weight: 700;
+    color: #2c3e50;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .publication-banner {
@@ -53,6 +86,9 @@ body {
 
 .publication-authors {
     font-family: 'Google Sans', sans-serif;
+    font-size: 1.2rem;
+    color: #34495e;
+    margin-bottom: 1rem;
 }
 
 .publication-venue {
@@ -68,10 +104,12 @@ body {
 }
 
 .publication-authors {
+    color: #34495e;
 }
 
 .publication-authors a {
    color: hsl(204, 86%, 53%) !important;
+   text-decoration: none;
 }
 
 .publication-authors a:hover {
@@ -80,6 +118,7 @@ body {
 
 .author-block {
   display: inline-block;
+  margin: 0 0.25rem;
 }
 
 .publication-banner img {
@@ -94,9 +133,9 @@ body {
     width: 100%;
     height: 0;
     padding-bottom: 56.25%;
-
     overflow: hidden;
     border-radius: 10px !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .publication-video iframe {
@@ -136,22 +175,45 @@ body {
 .image-container {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 2rem;
 }
 
 .image-container figure {
   margin-bottom: 0.5rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.image-container figure:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .image-container img {
   width: 100%;
   height: auto;
   margin-bottom: 0.5rem;
+  border-radius: 4px;
+}
+
+.image-container figcaption {
+  text-align: center;
+  font-style: italic;
+  color: #7f8c8d;
+  padding: 0.75rem;
+  font-size: 0.95rem;
 }
 
 .bibtex-container {
   position: relative;
   margin-top: 1rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
 }
 
 .copy-button {
@@ -174,12 +236,18 @@ body {
 }
 
 pre {
-  position: relative;  /* 确保pre元素是相对定位的 */
+  position: relative;
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 4px;
+  overflow-x: auto;
+  margin-top: 2.5rem;
+  font-size: 0.9rem;
 }
 
 /* 调整 BibTeX 容器的宽度 */
 #BibTeX .container {
-  max-width: 50%;  /* 从90%减小到80% */
+  max-width: 100%;
 }
 
 .bibtex-container pre {
@@ -194,5 +262,69 @@ pre {
   object-fit: contain;
 }
 
+.section {
+  padding: 4rem 2rem;
+}
 
+.hero.is-light {
+  background-color: #f1f8ff;
+  border-radius: 10px;
+  margin: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
 
+.title.is-3 {
+  color: #2c3e50;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 0.5rem;
+  margin-bottom: 2rem;
+  display: inline-block;
+  font-weight: 600;
+}
+
+.content p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #34495e;
+}
+
+.columns.is-centered.has-text-centered {
+  margin-top: 1rem;
+}
+
+.external-link.button {
+  margin: 0.25rem;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.external-link.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hero-body {
+  padding: 3rem 1.5rem;
+}
+
+.image-container .columns {
+  margin-top: 0;
+}
+
+.image-container .columns .column {
+  padding: 0.75rem;
+}
+
+.image-container .columns .image {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.image-container .columns .image:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
