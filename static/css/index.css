@@ -414,6 +414,12 @@ body::before {
   box-shadow: var(--shadow-md);
   padding: 2.5rem;
   border: 1px solid rgba(225, 112, 135, 0.1);
+  transition: all 0.3s ease;
+}
+
+.bibtex-container:hover {
+  box-shadow: var(--shadow-lg), var(--warm-shadow);
+  transform: translateY(-2px);
 }
 
 .copy-button {
@@ -433,6 +439,7 @@ body::before {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  z-index: 10;
 }
 
 .copy-button i {
@@ -473,17 +480,200 @@ body::before {
   }
 }
 
+/* BibTeX代码块样式 */
 pre {
   position: relative;
-  background: var(--dark-bg);
-  color: #f0ebe5;
-  padding: 2rem;
-  border-radius: 10px;
+  background: linear-gradient(145deg, #2c3e50 0%, #34495e 100%);
+  color: #ecf0f1;
+  padding: 2.5rem;
+  border-radius: 15px;
   overflow-x: auto;
   margin-top: 2rem;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  border: 1px solid rgba(225, 112, 135, 0.2);
+  font-family: 'Fira Code', 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+  font-size: 1rem;
+  line-height: 1.8;
+  border: 2px solid rgba(225, 112, 135, 0.2);
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    0 8px 25px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+pre:hover {
+  border-color: rgba(225, 112, 135, 0.4);
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    0 12px 35px rgba(0, 0, 0, 0.2),
+    0 0 20px rgba(225, 112, 135, 0.1);
+}
+
+/* BibTeX语法高亮 */
+#bibtex-content {
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* BibTeX语法高亮颜色 */
+pre code {
+  color: inherit;
+  background: none;
+  padding: 0;
+  font-size: inherit;
+  display: block;
+}
+
+/* BibTeX语法元素颜色 */
+.bibtex-entry {
+  color: #ff6b6b;
+  font-weight: 700;
+  text-shadow: 0 0 8px rgba(255, 107, 107, 0.3);
+}
+
+.bibtex-key {
+  color: #4ecdc4;
+  font-weight: 600;
+  text-shadow: 0 0 6px rgba(78, 205, 196, 0.3);
+}
+
+.bibtex-field {
+  color: #45b7d1;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.bibtex-value {
+  color: #96ceb4;
+  font-weight: 400;
+}
+
+.bibtex-punctuation {
+  color: #feca57;
+  font-weight: 500;
+}
+
+/* 添加BibTeX装饰线条 */
+pre::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, 
+    var(--accent-color) 0%, 
+    #f4a6a1 25%, 
+    #a8e6cf 50%, 
+    #ffd93d 75%, 
+    var(--accent-color) 100%);
+  border-radius: 15px 15px 0 0;
+}
+
+/* 添加代码行号效果 */
+pre::after {
+  content: '';
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  bottom: 1rem;
+  width: 2px;
+  background: linear-gradient(180deg, 
+    rgba(225, 112, 135, 0.3) 0%, 
+    rgba(225, 112, 135, 0.1) 50%, 
+    rgba(225, 112, 135, 0.3) 100%);
+  border-radius: 2px;
+}
+
+/* BibTeX元素悬浮效果 */
+.bibtex-entry:hover {
+  color: #ff5252;
+  text-shadow: 0 0 12px rgba(255, 82, 82, 0.5);
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+.bibtex-key:hover {
+  color: #26d0ce;
+  text-shadow: 0 0 10px rgba(38, 208, 206, 0.5);
+  transform: scale(1.03);
+  transition: all 0.3s ease;
+}
+
+.bibtex-field:hover {
+  color: #1976d2;
+  transform: scale(1.02);
+  transition: all 0.3s ease;
+}
+
+.bibtex-value:hover {
+  color: #81c784;
+  text-shadow: 0 0 6px rgba(129, 199, 132, 0.3);
+  transition: all 0.3s ease;
+}
+
+.bibtex-punctuation:hover {
+  color: #ffb74d;
+  transform: scale(1.1);
+  transition: all 0.2s ease;
+}
+
+/* 添加选择文本效果 */
+pre code::selection {
+  background: rgba(225, 112, 135, 0.3);
+  color: white;
+}
+
+pre code::-moz-selection {
+  background: rgba(225, 112, 135, 0.3);
+  color: white;
+}
+
+/* 为BibTeX标题添加特殊装饰 */
+#BibTeX .title::before {
+  content: '📋';
+  margin-right: 1rem;
+  font-size: 2rem;
+  vertical-align: middle;
+}
+
+/* 添加打字机效果（可选） */
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* 为整个BibTeX区域添加淡入动画 */
+.bibtex-container {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+  pre {
+    padding: 1.5rem;
+    font-size: 0.9rem;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  .bibtex-container {
+    padding: 1.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  
+  .copy-button {
+    position: relative;
+    top: auto;
+    right: auto;
+    margin-bottom: 1rem;
+    display: inline-flex;
+  }
 }
 
 /* 页脚美化 */

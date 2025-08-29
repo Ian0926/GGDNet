@@ -346,12 +346,12 @@
         <button class="copy-button" onclick="copyBibTeX()">
           <i class="fas fa-copy"></i> Copy
         </button>
-        <pre><code id="bibtex-content">@article{zheng2025ugdnet,
-  title={UGDNet: A Unified Geometry-Decoupled Network for Compressed Depth Upsampling},
-  author={Zheng, Huan and Han, Wencheng and Hoi, Steven C. H. and Shen, Jianbing},
-  journal={arxiv},
-  year={2025},
-}</code></pre>
+        <pre><code id="bibtex-content"><span class="bibtex-entry">@article</span><span class="bibtex-punctuation">{</span><span class="bibtex-key">zheng2025ugdnet</span><span class="bibtex-punctuation">,</span>
+  <span class="bibtex-field">title</span><span class="bibtex-punctuation">=</span><span class="bibtex-punctuation">{</span><span class="bibtex-value">UGDNet: A Unified Geometry-Decoupled Network for Compressed Depth Upsampling</span><span class="bibtex-punctuation">}</span><span class="bibtex-punctuation">,</span>
+  <span class="bibtex-field">author</span><span class="bibtex-punctuation">=</span><span class="bibtex-punctuation">{</span><span class="bibtex-value">Zheng, Huan and Han, Wencheng and Hoi, Steven C. H. and Shen, Jianbing</span><span class="bibtex-punctuation">}</span><span class="bibtex-punctuation">,</span>
+  <span class="bibtex-field">journal</span><span class="bibtex-punctuation">=</span><span class="bibtex-punctuation">{</span><span class="bibtex-value">arxiv</span><span class="bibtex-punctuation">}</span><span class="bibtex-punctuation">,</span>
+  <span class="bibtex-field">year</span><span class="bibtex-punctuation">=</span><span class="bibtex-punctuation">{</span><span class="bibtex-value">2025</span><span class="bibtex-punctuation">}</span><span class="bibtex-punctuation">,</span>
+<span class="bibtex-punctuation">}</span></code></pre>
       </div>
     </div>
 </section>
@@ -379,13 +379,39 @@
 <!-- 添加复制BibTeX的JavaScript函数 -->
 <script>
   function copyBibTeX() {
-    const bibtexContent = document.getElementById('bibtex-content').textContent;
+    // 获取纯文本内容，去除HTML标签
+    const bibtexElement = document.getElementById('bibtex-content');
+    let bibtexContent = bibtexElement.textContent || bibtexElement.innerText;
+    
+    // 清理格式，确保复制的是干净的BibTeX格式
+    bibtexContent = bibtexContent.replace(/\s+/g, ' ').trim();
+    bibtexContent = `@article{zheng2025ugdnet,
+  title={UGDNet: A Unified Geometry-Decoupled Network for Compressed Depth Upsampling},
+  author={Zheng, Huan and Han, Wencheng and Hoi, Steven C. H. and Shen, Jianbing},
+  journal={arxiv},
+  year={2025},
+}`;
+    
     navigator.clipboard.writeText(bibtexContent).then(function() {
       const copyButton = document.querySelector('.copy-button');
       const originalText = copyButton.innerHTML;
-      copyButton.innerHTML = '<i class="fas fa-check"></i> Copied';
+      copyButton.innerHTML = '<i class="fas fa-check"></i> Copied!';
+      copyButton.style.background = 'linear-gradient(135deg, #4caf50 0%, #8bc34a 100%)';
+      
       setTimeout(function() {
         copyButton.innerHTML = originalText;
+        copyButton.style.background = 'linear-gradient(135deg, var(--accent-color) 0%, #f4a6a1 100%)';
+      }, 2000);
+    }).catch(function(err) {
+      console.error('复制失败: ', err);
+      const copyButton = document.querySelector('.copy-button');
+      const originalText = copyButton.innerHTML;
+      copyButton.innerHTML = '<i class="fas fa-exclamation"></i> Error';
+      copyButton.style.background = 'linear-gradient(135deg, #f44336 0%, #ff5722 100%)';
+      
+      setTimeout(function() {
+        copyButton.innerHTML = originalText;
+        copyButton.style.background = 'linear-gradient(135deg, var(--accent-color) 0%, #f4a6a1 100%)';
       }, 2000);
     });
   }
