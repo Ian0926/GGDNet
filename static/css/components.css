@@ -1,11 +1,11 @@
-/* ===== 科技感组件样式 ===== */
+/* ===== 温馨主题组件样式 ===== */
 
 /* === 头部区域美化 === */
 .tech-theme .hero {
   background: linear-gradient(135deg, 
-    rgba(10, 14, 23, 0.8) 0%, 
-    rgba(15, 23, 42, 0.9) 50%, 
-    rgba(30, 41, 59, 0.8) 100%
+    rgba(250, 247, 242, 0.9) 0%, 
+    rgba(255, 245, 240, 0.95) 50%, 
+    rgba(255, 214, 204, 0.9) 100%
   );
   backdrop-filter: var(--backdrop-blur);
   border-bottom: 1px solid var(--glass-border);
@@ -24,8 +24,8 @@
   right: 0;
   bottom: 0;
   background: 
-    radial-gradient(circle at 20% 20%, rgba(0, 212, 255, 0.15) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(102, 126, 234, 0.15) 0%, transparent 50%);
+    radial-gradient(circle at 20% 20%, rgba(255, 214, 204, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(204, 224, 242, 0.2) 0%, transparent 50%);
   pointer-events: none;
   z-index: 1;
 }
@@ -38,8 +38,8 @@
   right: -50%;
   bottom: -50%;
   background: 
-    linear-gradient(45deg, transparent 48%, rgba(0, 212, 255, 0.1) 50%, transparent 52%),
-    linear-gradient(-45deg, transparent 48%, rgba(102, 126, 234, 0.1) 50%, transparent 52%);
+    linear-gradient(45deg, transparent 48%, rgba(255, 214, 204, 0.15) 50%, transparent 52%),
+    linear-gradient(-45deg, transparent 48%, rgba(204, 224, 242, 0.15) 50%, transparent 52%);
   background-size: 100px 100px;
   animation: gridMove 20s linear infinite;
   pointer-events: none;
@@ -61,17 +61,8 @@
   font-size: 4rem;
   font-weight: 900;
   margin-bottom: var(--space-md);
-  background: linear-gradient(135deg, 
-    var(--text-primary) 0%, 
-    var(--neon-blue) 30%, 
-    var(--tech-purple) 70%, 
-    var(--cyber-pink) 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
-  animation: glowPulse 3s ease-in-out infinite;
+  color: var(--text-primary);
+  text-shadow: 0 2px 4px rgba(140, 110, 95, 0.1);
 }
 
 .tech-theme .publication-authors {
@@ -81,7 +72,7 @@
 }
 
 .tech-theme .publication-authors a {
-  color: var(--neon-blue) !important;
+  color: var(--slate-blue) !important;
   text-decoration: none;
   transition: var(--transition-normal);
   position: relative;
@@ -89,7 +80,7 @@
 }
 
 .tech-theme .publication-authors a:hover {
-  color: var(--fluorescent-green) !important;
+  color: var(--deep-peach) !important;
   transform: translateY(-2px);
 }
 
@@ -100,7 +91,7 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: var(--fluorescent-green);
+  background: var(--deep-peach);
   transition: var(--transition-normal);
 }
 
@@ -120,7 +111,7 @@
 
 .tech-theme .author-block sup {
   font-size: 0.8em;
-  color: var(--neon-blue);
+  color: var(--slate-blue);
   margin-left: 2px;
 }
 
@@ -138,9 +129,8 @@
   align-items: center;
   gap: var(--space-xs);
   padding: var(--space-sm) var(--space-md);
-  background: var(--glass-bg);
-  backdrop-filter: var(--backdrop-blur);
-  border: 1px solid var(--glass-border);
+  background: var(--peach);
+  border: 1px solid rgba(255, 179, 167, 0.3);
   border-radius: var(--radius-lg);
   color: var(--text-primary);
   text-decoration: none;
@@ -148,6 +138,7 @@
   transition: var(--transition-bounce);
   position: relative;
   overflow: hidden;
+  box-shadow: 0 4px 12px rgba(255, 179, 167, 0.2);
 }
 
 .tech-theme .link-block a::before {
@@ -167,10 +158,10 @@
 
 .tech-theme .link-block a:hover {
   transform: translateY(-4px) scale(1.05);
-  background: rgba(255, 255, 255, 0.15);
-  border-color: var(--neon-blue);
-  box-shadow: var(--shadow-md), var(--glow-blue);
-  color: var(--neon-blue);
+  background: var(--deep-peach);
+  border-color: rgba(255, 156, 140, 0.5);
+  box-shadow: var(--shadow-md), var(--glow-peach);
+  color: var(--text-primary);
 }
 
 .tech-theme .link-block a:hover::before {
@@ -183,7 +174,7 @@
 
 .tech-theme .link-block a:hover .icon {
   transform: scale(1.2);
-  color: var(--neon-blue);
+  color: var(--text-primary);
 }
 
 /* === 内容区域美化 === */
@@ -205,23 +196,23 @@
 
 .tech-theme .hero.is-light:hover {
   background: rgba(255, 255, 255, 0.12);
-  border-color: var(--neon-blue);
-  box-shadow: var(--shadow-lg), var(--glow-blue);
+  border-color: var(--peach);
+  box-shadow: var(--shadow-lg), var(--glow-peach);
   transform: translateY(-2px);
 }
 
 .tech-theme .title.is-3 {
-  color: var(--neon-blue);
+  color: var(--peach);
   border-bottom: 3px solid transparent;
   border-image: linear-gradient(90deg, 
-    var(--tech-purple) 0%, 
-    var(--neon-blue) 50%, 
-    var(--fluorescent-green) 100%
+    var(--soft-coral) 0%, 
+    var(--peach) 50%, 
+    var(--deep-peach) 100%
   ) 1;
   padding-bottom: var(--space-sm);
   margin-bottom: var(--space-lg);
   font-size: 2.5rem;
-  text-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+  text-shadow: 0 0 20px rgba(255, 179, 167, 0.3);
 }
 
 .tech-theme .content.has-text-justified {
@@ -236,8 +227,8 @@
 
 .tech-theme .content.has-text-justified:hover {
   background: rgba(255, 255, 255, 0.12);
-  border-color: var(--tech-purple);
-  box-shadow: var(--shadow-md), var(--glow-purple);
+  border-color: var(--soft-coral);
+  box-shadow: var(--shadow-md), var(--glow-coral);
 }
 
 .tech-theme .content p {
@@ -267,8 +258,8 @@
 
 .tech-theme .image-container figure:hover {
   background: rgba(255, 255, 255, 0.12);
-  border-color: var(--neon-blue);
-  box-shadow: var(--shadow-lg), var(--glow-blue);
+  border-color: var(--peach);
+  box-shadow: var(--shadow-lg), var(--glow-peach);
   transform: translateY(-8px) scale(1.02);
 }
 

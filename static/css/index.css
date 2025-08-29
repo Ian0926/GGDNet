@@ -1,14 +1,31 @@
 :root {
-  --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-  --dark-bg: #1a1a2e;
-  --light-bg: #f8f9fa;
-  --text-primary: #2c3e50;
-  --text-secondary: #34495e;
-  --accent-color: #667eea;
-  --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.1);
-  --shadow-md: 0 8px 25px rgba(0, 0, 0, 0.15);
-  --shadow-lg: 0 15px 35px rgba(0, 0, 0, 0.2);
+  /* 温馨主色调 - 柔和暖色调 */
+  --primary-gradient: linear-gradient(135deg, #f4e4bc 0%, #f2c2a7 100%);
+  --secondary-gradient: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+  
+  /* 背景色 - 浅米色调 */
+  --dark-bg: #4a4a3a;
+  --light-bg: #faf8f3;
+  
+  /* 文字颜色 - 深灰色代替纯黑 */
+  --text-primary: #4a4a4a;
+  --text-secondary: #6b6b6b;
+  
+  /* 强调色 - 柔和的桃红色 */
+  --accent-color: #e17087;
+  
+  /* 辅助色 - 低饱和度互补色 */
+  --complement-green: #8fb3a3;
+  --complement-blue: #a3b3c4;
+  
+  /* 阴影效果 - 更温馨的阴影 */
+  --shadow-xs: 0 2px 4px rgba(74, 74, 74, 0.08);
+  --shadow-sm: 0 4px 8px rgba(74, 74, 74, 0.10);
+  --shadow-md: 0 8px 25px rgba(74, 74, 74, 0.12);
+  --shadow-lg: 0 15px 35px rgba(74, 74, 74, 0.15);
+  --shadow-xl: 0 25px 50px rgba(74, 74, 74, 0.18);
+  --warm-shadow: 0 8px 32px rgba(225, 112, 135, 0.20);
+  --soft-shadow: 0 4px 20px rgba(250, 248, 243, 0.9);
 }
 
 * {
@@ -23,6 +40,27 @@ body {
   color: var(--text-primary);
   line-height: 1.7;
   scroll-behavior: smooth;
+  position: relative;
+}
+
+/* 添加温馨的背景纹理 */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(250, 226, 179, 0.3) 2px, transparent 2px),
+    radial-gradient(circle at 75% 75%, rgba(242, 194, 167, 0.2) 1px, transparent 1px),
+    linear-gradient(45deg, rgba(255, 234, 167, 0.1) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(250, 177, 160, 0.08) 25%, transparent 25%);
+  background-size: 40px 40px, 20px 20px, 60px 60px, 60px 60px;
+  background-position: 0 0, 10px 10px, 0 0, 30px 30px;
+  opacity: 0.6;
+  z-index: -1;
+  pointer-events: none;
 }
 
 /* 头部区域美化 */
@@ -103,13 +141,33 @@ body {
   border: 2px solid transparent;
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
-  border-radius: 50px;
-  padding: 1rem 2rem;
+  border-radius: 30px;
+  padding: 1.2rem 2.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 为按钮添加温馨的装饰效果 */
+.link-block a::before {
+  content: '♡';
+  position: absolute;
+  top: 0.5rem;
+  right: 0.8rem;
+  font-size: 0.7rem;
+  opacity: 0.3;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.link-block a:hover::before {
+  content: '♥';
+  opacity: 0.6;
+  transform: scale(1.2);
 }
 
 .link-block a:hover {
   transform: translateY(-4px) scale(1.05);
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-xl), var(--warm-shadow);
   background: rgba(255, 255, 255, 0.25);
   border-color: rgba(255, 255, 255, 0.3);
 }
@@ -117,14 +175,42 @@ body {
 /* 内容区域美化 */
 .section {
   padding: 5rem 2rem;
+  position: relative;
+}
+
+/* 为section分隔添加装饰线条 */
+.section:not(:first-child)::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+  border-radius: 10px;
+}
+
+/* 为section添加温馨的装饰点 */
+.section:not(:first-child):not(:last-child)::after {
+  content: '💫';
+  position: absolute;
+  top: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.2rem;
+  background: white;
+  padding: 0.5rem;
+  border-radius: 50%;
+  box-shadow: var(--shadow-sm);
 }
 
 .hero.is-light {
-  background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
-  border-radius: 20px;
+  background: linear-gradient(135deg, #fefcf8 0%, #f7f3ed 100%);
+  border-radius: 25px;
   margin: 2rem auto;
-  box-shadow: var(--shadow-md);
-  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: var(--shadow-lg), var(--soft-shadow);
+  border: 1px solid rgba(250, 248, 243, 0.8);
   max-width: 1200px;
 }
 
@@ -137,6 +223,28 @@ body {
   font-weight: 700;
   font-size: 2.2rem;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+/* 为标题添加装饰性图标 */
+.title.is-3::before {
+  content: '✨';
+  position: absolute;
+  left: -3rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  opacity: 0.6;
+}
+
+.title.is-3::after {
+  content: '✨';
+  position: absolute;
+  right: -3rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  opacity: 0.6;
 }
 
 .content p {
@@ -147,11 +255,11 @@ body {
 }
 
 .content.has-text-justified {
-  background: white;
+  background: linear-gradient(135deg, #fefcf8 0%, #faf8f3 100%);
   padding: 2.5rem;
-  border-radius: 15px;
-  box-shadow: var(--shadow-sm);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
+  box-shadow: var(--shadow-md), var(--soft-shadow);
+  border: 1px solid rgba(225, 112, 135, 0.08);
 }
 
 /* 图片容器美化 */
@@ -164,25 +272,42 @@ body {
 
 .image-container figure {
   margin-bottom: 1rem;
-  background: white;
-  border-radius: 15px;
+  background: linear-gradient(135deg, #fefcf8 0%, #faf8f3 100%);
+  border-radius: 20px;
   box-shadow: var(--shadow-md);
   padding: 2rem;
   transition: all 0.4s ease;
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(225, 112, 135, 0.08);
   overflow: hidden;
+  position: relative;
+}
+
+/* 为图片容器添加角落装饰 */
+.image-container figure::before {
+  content: '🌸';
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1rem;
+  opacity: 0.4;
+  transition: all 0.3s ease;
+}
+
+.image-container figure:hover::before {
+  opacity: 0.7;
+  transform: rotate(15deg) scale(1.1);
 }
 
 .image-container figure:hover {
   transform: translateY(-8px);
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-xl), var(--warm-shadow);
 }
 
 .image-container img {
   width: 100%;
   height: auto;
   margin-bottom: 1rem;
-  border-radius: 10px;
+  border-radius: 15px;
   transition: transform 0.3s ease;
 }
 
@@ -193,10 +318,10 @@ body {
 .image-container figcaption {
   text-align: center;
   font-style: italic;
-  color: #6c757d;
+  color: var(--complement-green);
   padding: 1rem;
   font-size: 1rem;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  background: linear-gradient(135deg, #faf8f3 0%, #f5f1e8 100%);
   border-radius: 8px;
   margin-top: 1rem;
 }
@@ -212,62 +337,63 @@ body {
 }
 
 .image-container .columns .image {
-  background: white;
-  border-radius: 15px;
+  background: linear-gradient(135deg, #fefcf8 0%, #faf8f3 100%);
+  border-radius: 18px;
   box-shadow: var(--shadow-md);
   padding: 1.5rem;
   transition: all 0.4s ease;
   height: 100%;
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(225, 112, 135, 0.08);
 }
 
 .image-container .columns .image:hover {
   transform: translateY(-6px);
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-xl), var(--warm-shadow);
 }
 
 /* BibTeX 区域美化 */
 .bibtex-container {
   position: relative;
   margin-top: 2rem;
-  background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
-  border-radius: 15px;
+  background: linear-gradient(135deg, #fefcf8 0%, #f7f3ed 100%);
+  border-radius: 20px;
   box-shadow: var(--shadow-md);
   padding: 2.5rem;
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(225, 112, 135, 0.1);
 }
 
 .copy-button {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background: var(--primary-gradient);
+  background: linear-gradient(135deg, var(--accent-color) 0%, #f4a6a1 100%);
   color: white;
   border: none;
-  border-radius: 25px;
+  border-radius: 30px;
   padding: 0.8rem 1.5rem;
   font-size: 0.9rem;
   cursor: pointer;
   transition: all 0.3s ease;
   font-weight: 600;
+  box-shadow: 0 4px 15px rgba(225, 112, 135, 0.3);
 }
 
 .copy-button:hover {
   transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-lg), var(--warm-shadow);
 }
 
 pre {
   position: relative;
   background: var(--dark-bg);
-  color: #e9ecef;
+  color: #f0ebe5;
   padding: 2rem;
   border-radius: 10px;
   overflow-x: auto;
   margin-top: 2rem;
   font-size: 0.95rem;
   line-height: 1.6;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(225, 112, 135, 0.2);
 }
 
 /* 页脚美化 */
@@ -324,6 +450,23 @@ pre {
   .content.has-text-justified {
     padding: 2rem;
   }
+  
+  /* 调整装饰元素在小屏幕上的显示 */
+  .title.is-3::before,
+  .title.is-3::after {
+    display: none;
+  }
+  
+  body::after {
+    display: none;
+  }
+  
+  .hero.is-small:nth-of-type(2)::before,
+  .hero.is-small:nth-of-type(3)::before {
+    font-size: 1.5rem;
+    top: 1rem;
+    left: 1rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -364,7 +507,7 @@ pre {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: var(--light-bg);
   border-radius: 4px;
 }
 
@@ -374,5 +517,55 @@ pre {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #5a67d8;
+  background: #d55a7a;
+}
+
+/* 添加漂浮装饰元素 */
+body::after {
+  content: '🌟';
+  position: fixed;
+  top: 20%;
+  right: 5%;
+  font-size: 1.5rem;
+  opacity: 0.2;
+  animation: float 6s ease-in-out infinite;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* 漂浮动画 */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+  50% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-10px) rotate(-3deg);
+  }
+}
+
+/* 为不同的section添加不同的装饰 */
+.hero.is-small:nth-of-type(2)::before {
+  content: '🔬';
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  font-size: 2rem;
+  opacity: 0.1;
+  z-index: 1;
+}
+
+.hero.is-small:nth-of-type(3)::before {
+  content: '📊';
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  font-size: 2rem;
+  opacity: 0.1;
+  z-index: 1;
 }

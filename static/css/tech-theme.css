@@ -2,33 +2,33 @@
 
 /* === CSS变量系统 === */
 :root {
-  /* 色彩系统 - 科技感深色主题 */
-  --space-black: #0a0e17;
-  --deep-blue: #0f172a;
-  --midnight-blue: #1e293b;
-  --tech-purple: #667eea;
-  --neon-blue: #00d4ff;
-  --cyber-pink: #ff2d95;
-  --fluorescent-green: #00ff88;
-  --electric-yellow: #ffde59;
+  /* 色彩系统 - 温馨暖色主题 */
+  --warm-cream: #faf7f2;
+  --soft-coral: #ffd6cc;
+  --pale-yellow: #fff2cc;
+  --dusty-green: #ccd6c6;
+  --light-blue: #cce0f2;
+  --peach: #ffb3a7;
+  --deep-peach: #ff9c8c;
+  --slate-blue: #88a0a8;
   
   /* 玻璃效果参数 */
-  --glass-bg: rgba(255, 255, 255, 0.1);
-  --glass-border: rgba(255, 255, 255, 0.2);
-  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-  --backdrop-blur: blur(20px);
+  --glass-bg: rgba(255, 245, 240, 0.8);
+  --glass-border: rgba(232, 213, 201, 0.6);
+  --glass-shadow: 0 8px 32px rgba(140, 110, 95, 0.1);
+  --backdrop-blur: blur(15px);
   
   /* 文字色彩 */
-  --text-primary: #ffffff;
-  --text-secondary: #e2e8f0;
-  --text-muted: #94a3b8;
+  --text-primary: #4a4a4a;
+  --text-secondary: #666666;
+  --text-muted: #888888;
   
   /* 阴影效果 */
-  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.5);
-  --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.6);
-  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.7);
-  --glow-blue: 0 0 20px rgba(0, 212, 255, 0.4);
-  --glow-purple: 0 0 20px rgba(102, 126, 234, 0.4);
+  --shadow-sm: 0 4px 12px rgba(140, 110, 95, 0.1);
+  --shadow-md: 0 8px 32px rgba(140, 110, 95, 0.15);
+  --shadow-lg: 0 16px 48px rgba(140, 110, 95, 0.2);
+  --glow-coral: 0 0 20px rgba(255, 182, 161, 0.3);
+  --glow-peach: 0 0 20px rgba(255, 179, 167, 0.3);
   
   /* 间距系统 */
   --space-xs: 0.5rem;
@@ -64,7 +64,7 @@ html {
 
 body {
   font-family: 'Inter', 'Google Sans', 'Noto Sans', sans-serif;
-  background: linear-gradient(135deg, var(--space-black) 0%, var(--deep-blue) 50%, var(--midnight-blue) 100%);
+  background: var(--warm-cream);
   color: var(--text-primary);
   line-height: 1.7;
   min-height: 100vh;
@@ -72,7 +72,7 @@ body {
   position: relative;
 }
 
-/* 添加科技感背景图案 */
+/* 添加温馨背景图案 */
 body::before {
   content: '';
   position: fixed;
@@ -81,8 +81,8 @@ body::before {
   right: 0;
   bottom: 0;
   background: 
-    radial-gradient(circle at 20% 20%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(102, 126, 234, 0.1) 0%, transparent 50%);
+    radial-gradient(circle at 20% 20%, rgba(255, 214, 204, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(204, 224, 242, 0.2) 0%, transparent 50%);
   pointer-events: none;
   z-index: -1;
 }
@@ -92,10 +92,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: var(--space-sm);
-  background: linear-gradient(135deg, var(--text-primary) 0%, var(--neon-blue) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--text-primary);
 }
 
 h1 { font-size: 3.5rem; }
@@ -112,14 +109,14 @@ p {
 }
 
 a {
-  color: var(--neon-blue);
+  color: var(--slate-blue);
   text-decoration: none;
   transition: var(--transition-normal);
   position: relative;
 }
 
 a:hover {
-  color: var(--fluorescent-green);
+  color: var(--deep-peach);
 }
 
 a::after {
@@ -129,7 +126,7 @@ a::after {
   left: 0;
   width: 0;
   height: 2px;
-  background: var(--fluorescent-green);
+  background: var(--deep-peach);
   transition: var(--transition-normal);
 }
 
@@ -242,12 +239,12 @@ a:hover::after {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, var(--tech-purple) 0%, var(--neon-blue) 100%);
+  background: linear-gradient(135deg, var(--soft-coral) 0%, var(--peach) 100%);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, var(--neon-blue) 0%, var(--fluorescent-green) 100%);
+  background: linear-gradient(135deg, var(--peach) 0%, var(--deep-peach) 100%);
 }
 
 /* === 工具类动画 === */
