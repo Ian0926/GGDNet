@@ -147,6 +147,60 @@ body::before {
   overflow: hidden;
 }
 
+/* 图标美化样式 */
+.link-block a .icon {
+  margin-right: 0.8rem;
+  transition: all 0.4s ease;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+}
+
+.link-block a:hover .icon {
+  transform: rotate(360deg) scale(1.1);
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+/* PDF图标特效 */
+.link-block a .fa-file-pdf {
+  color: #ff6b6b;
+  filter: drop-shadow(0 0 8px rgba(255, 107, 107, 0.6));
+}
+
+.link-block a:hover .fa-file-pdf {
+  color: #ff5252;
+  filter: drop-shadow(0 0 12px rgba(255, 82, 82, 0.8));
+}
+
+/* GitHub图标特效 */
+.link-block a .fa-github {
+  color: #4fc3f7;
+  filter: drop-shadow(0 0 8px rgba(79, 195, 247, 0.6));
+}
+
+.link-block a:hover .fa-github {
+  color: #29b6f6;
+  filter: drop-shadow(0 0 12px rgba(41, 182, 246, 0.8));
+}
+
+/* arXiv图标特效 */
+.link-block a .ai-arxiv {
+  color: #9c27b0;
+  filter: drop-shadow(0 0 8px rgba(156, 39, 176, 0.6));
+}
+
+.link-block a:hover .ai-arxiv {
+  color: #8e24aa;
+  filter: drop-shadow(0 0 12px rgba(142, 36, 170, 0.8));
+}
+
 /* 为按钮添加温馨的装饰效果 */
 .link-block a::before {
   content: '♡';
@@ -284,7 +338,7 @@ body::before {
 
 /* 为图片容器添加角落装饰 */
 .image-container figure::before {
-  content: '🌸';
+  content: '🔍';
   position: absolute;
   top: 1rem;
   right: 1rem;
@@ -376,11 +430,47 @@ body::before {
   transition: all 0.3s ease;
   font-weight: 600;
   box-shadow: 0 4px 15px rgba(225, 112, 135, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.copy-button i {
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.5));
 }
 
 .copy-button:hover {
-  transform: translateY(-2px);
+  transform: translateY(-2px) scale(1.05);
   box-shadow: var(--shadow-lg), var(--warm-shadow);
+  background: linear-gradient(135deg, #f4a6a1 0%, var(--accent-color) 100%);
+}
+
+.copy-button:hover i {
+  transform: rotate(15deg) scale(1.1);
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8));
+}
+
+/* 成功状态的图标动画 */
+.copy-button .fa-check {
+  color: #4caf50;
+  animation: successPulse 0.6s ease-out;
+}
+
+@keyframes successPulse {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 pre {
