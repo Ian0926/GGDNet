@@ -1,0 +1,276 @@
+/* ===== 性能优化和浏览器兼容性 ===== */
+
+/* === 浏览器兼容性修复 === */
+
+/* Safari backdrop-filter 回退方案 */
+@supports not (backdrop-filter: blur(20px)) {
+  .tech-theme .glass {
+    background: rgba(15, 23, 42, 0.95) !important;
+  }
+  
+  .tech-theme .hero::before {
+    opacity: 0.1 !important;
+  }
+}
+
+/* Firefox 滚动条样式兼容 */
+@-moz-document url-prefix() {
+  .tech-theme .glass {
+    background: rgba(15, 23, 42, 0.98) !important;
+  }
+  
+  /* Firefox 下的模糊效果优化 */
+  .tech-theme .hero {
+    background: linear-gradient(135deg, 
+      rgba(10, 14, 23, 0.95) 0%, 
+      rgba(15, 23, 42, 0.98) 50%, 
+      rgba(30, 41, 59, 0.95) 100%
+    ) !important;
+  }
+}
+
+/* IE 11 兼容性处理 (基本样式回退) */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .tech-theme {
+    background: #0a0e17 !important;
+  }
+  
+  .tech-theme .glass {
+    background: rgba(15, 23, 42, 0.95) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  }
+  
+  .tech-theme .publication-title {
+    background: #00d4ff !important;
+    -webkit-text-fill-color: initial !important;
+    color: #00d4ff !important;
+  }
+  
+  /* 禁用动画 */
+  .tech-theme * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* === 性能优化 === */
+
+/* 减少重绘和回流 */
+.tech-theme .optimize-rendering {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  will-change: transform, opacity;
+}
+
+/* 硬件加速 */
+.tech-theme .hardware-accelerate {
+  transform: translate3d(0, 0, 0);
+}
+
+/* 图片加载优化 */
+.tech-theme img {
+  content-visibility: auto;
+}
+
+.tech-theme img[loading="lazy"] {
+  loading: lazy;
+  decoding: async;
+}
+
+/* 字体加载优化 */
+.tech-theme .font-loading {
+  font-display: swap;
+}
+
+/* 减少布局抖动 */
+.tech-theme .stable-layout {
+  contain: layout style paint;
+}
+
+/* === 关键CSS内联 (建议在实际项目中内联) === */
+.tech-theme .critical-css {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* === 资源加载策略 === */
+
+/* 首屏内容优先加载 */
+.tech-theme .above-the-fold {
+  content-visibility: auto;
+  contain-intrinsic-size: 1000px;
+}
+
+/* 非首屏内容延迟加载 */
+.tech-theme .below-the-fold {
+  content-visibility: auto;
+  contain-intrinsic-size: 500px;
+}
+
+/* === 动画性能优化 === */
+
+/* 使用transform和opacity进行动画 */
+.tech-theme .performant-animation {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* 避免布局变化的动画 */
+.tech-theme .no-layout-shift {
+  will-change: transform, opacity;
+}
+
+/* === 内存优化 === */
+
+/* 减少图层数量 */
+.tech-theme .layer-optimized {
+  isolation: isolate;
+}
+
+/* 合成器优化 */
+.tech-theme .compositor-friendly {
+  transform: translateZ(0);
+}
+
+/* === 网络优化 === */
+
+/* 资源预加载提示 */
+.tech-theme .preload-critical {
+  rel: preload;
+  as: style;
+}
+
+/* 资源预连接 */
+.tech-theme .preconnect-links {
+  rel: preconnect;
+}
+
+/* === 错误边界处理 === */
+
+/* 图片加载失败样式 */
+.tech-theme img:not([src]) {
+  visibility: hidden;
+}
+
+.tech-theme img[src=""] {
+  visibility: hidden;
+}
+
+/* 字体加载失败回退 */
+.tech-theme .font-fallback {
+  font-family: 'Google Sans', 'Noto Sans', sans-serif;
+}
+
+/* === 可访问性优化 === */
+
+/* 减少动画设置 */
+@media (prefers-reduced-motion: reduce) {
+  .tech-theme * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* 高对比度模式支持 */
+@media (prefers-contrast: high) {
+  .tech-theme {
+    --glass-bg: rgba(255, 255, 255, 0.15) !important;
+    --glass-border: rgba(255, 255, 255, 0.3) !important;
+  }
+  
+  .tech-theme .publication-title {
+    background: linear-gradient(135deg, #ffffff 0%, #00d4ff 100%) !important;
+  }
+}
+
+/* === 缓存优化 === */
+
+/* 长期缓存的文件名策略 */
+.tech-theme .cache-optimized {
+  /* 在实际项目中，应该使用构建工具添加hash到文件名 */
+  background-image: url('static/images/framework.PNG?v=1');
+}
+
+/* === 监控和调试 === */
+
+/* 布局调试辅助 */
+.tech-theme .debug-layout * {
+  outline: 1px solid rgba(255, 0, 0, 0.1) !important;
+}
+
+.tech-theme .debug-performance * {
+  animation: none !important;
+  transition: none !important;
+}
+
+/* === 渐进增强策略 === */
+
+/* 基础功能确保可用 */
+.tech-theme .core-functionality {
+  /* 确保即使JavaScript禁用也能正常工作 */
+}
+
+.tech-theme .no-js .enhanced-features {
+  display: none;
+}
+
+.tech-theme .js .basic-features {
+  display: none;
+}
+
+/* === 浏览器特定hacks (谨慎使用) === */
+
+/* Chrome 性能优化 */
+@media all and (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm) {
+  .tech-theme .chrome-optimized {
+    transform: translateZ(0);
+  }
+}
+
+/* Safari 性能优化 */
+_::-webkit-full-page-media, _:future, :root .tech-theme .safari-optimized {
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+/* === 资源加载状态 === */
+
+/* 加载中状态 */
+.tech-theme .loading {
+  background: linear-gradient(90deg, 
+    rgba(255, 255, 255, 0.1) 25%, 
+    rgba(255, 255, 255, 0.2) 50%, 
+    rgba(255, 255, 255, 0.1) 75%
+  );
+  background-size: 200% 100%;
+  animation: loadingShimmer 1.5s infinite;
+}
+
+@keyframes loadingShimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* 加载失败状态 */
+.tech-theme .error-state {
+  background: rgba(255, 0, 0, 0.1);
+  border: 1px solid rgba(255, 0, 0, 0.3);
+}
+
+/* === 性能监控标记 === */
+
+/* 核心网页指标监控点 */
+.tech-theme .lcp-element {
+  /* 最大内容绘制元素 */
+}
+
+.tech-theme .fid-element {
+  /* 首次输入延迟元素 */
+  will-change: transform;
+}
+
+.tech-theme .cls-element {
+  /* 累积布局偏移元素 */
+  contain-intrinsic-size: auto 100px;
+}

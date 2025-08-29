@@ -1,0 +1,289 @@
+/* ===== 现代化布局系统 ===== */
+
+/* === 网格布局系统 === */
+.tech-theme .container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+.tech-theme .container.is-max-desktop {
+  max-width: 1000px;
+}
+
+.tech-theme .container.is-max-widescreen {
+  max-width: 1400px;
+}
+
+/* 主网格布局 */
+.tech-theme .main-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+  padding: var(--space-xl) 0;
+}
+
+/* 内容区域网格 */
+.tech-theme .content-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+}
+
+/* 双栏网格 */
+.tech-theme .grid-2cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  align-items: start;
+}
+
+/* 三栏网格 */
+.tech-theme .grid-3cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+
+/* 四栏网格 */
+.tech-theme .grid-4cols {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+}
+
+/* === 列系统 === */
+.tech-theme .columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-lg);
+  margin: var(--space-lg) 0;
+}
+
+.tech-theme .column {
+  min-width: 0;
+}
+
+.tech-theme .column.is-half {
+  grid-column: span 1;
+}
+
+.tech-theme .column.is-full {
+  grid-column: 1 / -1;
+}
+
+.tech-theme .column.is-one-third {
+  grid-column: span 1;
+}
+
+.tech-theme .column.is-two-thirds {
+  grid-column: span 2;
+}
+
+/* === 对齐工具类 === */
+.tech-theme .is-centered {
+  display: grid;
+  place-items: center;
+}
+
+.tech-theme .has-text-centered {
+  text-align: center;
+}
+
+.tech-theme .has-text-justified {
+  text-align: justify;
+}
+
+.tech-theme .is-flex {
+  display: flex;
+}
+
+.tech-theme .is-flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tech-theme .is-flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* === 间距工具类 === */
+.tech-theme .mt-xs { margin-top: var(--space-xs); }
+.tech-theme .mt-sm { margin-top: var(--space-sm); }
+.tech-theme .mt-md { margin-top: var(--space-md); }
+.tech-theme .mt-lg { margin-top: var(--space-lg); }
+.tech-theme .mt-xl { margin-top: var(--space-xl); }
+
+.tech-theme .mb-xs { margin-bottom: var(--space-xs); }
+.tech-theme .mb-sm { margin-bottom: var(--space-sm); }
+.tech-theme .mb-md { margin-bottom: var(--space-md); }
+.tech-theme .mb-lg { margin-bottom: var(--space-lg); }
+.tech-theme .mb-xl { margin-bottom: var(--space-xl); }
+
+.tech-theme .pt-xs { padding-top: var(--space-xs); }
+.tech-theme .pt-sm { padding-top: var(--space-sm); }
+.tech-theme .pt-md { padding-top: var(--space-md); }
+.tech-theme .pt-lg { padding-top: var(--space-lg); }
+.tech-theme .pt-xl { padding-top: var(--space-xl); }
+
+.tech-theme .pb-xs { padding-bottom: var(--space-xs); }
+.tech-theme .pb-sm { padding-bottom: var(--space-sm); }
+.tech-theme .pb-md { padding-bottom: var(--space-md); }
+.tech-theme .pb-lg { padding-bottom: var(--space-lg); }
+.tech-theme .pb-xl { padding-bottom: var(--space-xl); }
+
+/* === 卡片布局 === */
+.tech-theme .card {
+  background: var(--glass-bg);
+  backdrop-filter: var(--backdrop-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-normal);
+}
+
+.tech-theme .card:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--neon-blue);
+  box-shadow: var(--shadow-lg), var(--glow-blue);
+  transform: translateY(-4px);
+}
+
+.tech-theme .card-header {
+  padding: var(--space-md) var(--space-lg);
+  border-bottom: 1px solid var(--glass-border);
+  margin: calc(-1 * var(--space-lg)) calc(-1 * var(--space-lg)) var(--space-md);
+}
+
+.tech-theme .card-content {
+  padding: var(--space-md) 0;
+}
+
+.tech-theme .card-footer {
+  padding: var(--space-md) var(--space-lg);
+  border-top: 1px solid var(--glass-border);
+  margin: var(--space-md) calc(-1 * var(--space-lg)) calc(-1 * var(--space-lg));
+}
+
+/* === 响应式网格 === */
+@media (max-width: 1024px) {
+  .tech-theme .grid-4cols {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .tech-theme .grid-3cols {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .tech-theme .grid-2cols,
+  .tech-theme .grid-3cols,
+  .tech-theme .grid-4cols {
+    grid-template-columns: 1fr;
+  }
+  
+  .tech-theme .columns {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+  
+  .tech-theme .column.is-two-thirds {
+    grid-column: 1;
+  }
+  
+  .tech-theme .container {
+    padding: 0 var(--space-sm);
+  }
+  
+  .tech-theme .card {
+    padding: var(--space-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .tech-theme .container {
+    padding: 0 var(--space-xs);
+  }
+  
+  .tech-theme .card {
+    padding: var(--space-sm);
+    border-radius: var(--radius-md);
+  }
+  
+  .tech-theme .card-header,
+  .tech-theme .card-footer {
+    margin: calc(-1 * var(--space-sm)) calc(-1 * var(--space-sm)) var(--space-sm);
+    padding: var(--space-sm);
+  }
+}
+
+/* === 特殊布局效果 === */
+.tech-theme .staggered-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-lg);
+}
+
+.tech-theme .staggered-grid > *:nth-child(odd) {
+  transform: translateY(20px);
+}
+
+.tech-theme .staggered-grid > *:nth-child(even) {
+  transform: translateY(-20px);
+}
+
+.tech-theme .masonry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: var(--space-md);
+  align-items: start;
+}
+
+/* === 滚动触发动画 === */
+.tech-theme .reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-out;
+}
+
+.tech-theme .reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* === 布局工具类 === */
+.tech-theme .is-sticky {
+  position: sticky;
+  top: var(--space-md);
+  z-index: 100;
+}
+
+.tech-theme .is-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.tech-theme .is-relative {
+  position: relative;
+}
+
+.tech-theme .is-absolute {
+  position: absolute;
+}
+
+.tech-theme .overflow-hidden {
+  overflow: hidden;
+}
+
+.tech-theme .overflow-visible {
+  overflow: visible;
+}
