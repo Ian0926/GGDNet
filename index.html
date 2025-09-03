@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
   <!-- Replace the content tag with appropriate information -->
-  <meta name="description" content="UGDNet: A Unified Geometry-Decoupled Network for Compressed Depth Upsampling">
-  <meta property="og:title" content="UGDNet: A Unified Geometry-Decoupled Network for Compressed Depth Upsampling"/>
+  <meta name="description" content="Taming Compression Corruption: A Unified Geometry-Decoupled Network for Compressed Depth Upsampling>
+  <meta property="og:title" content="Taming Compression Corruption: A Unified Geometry-Decoupled Network for Compressed Depth Upsampling/>
   <meta property="og:description" content="High-fidelity 3D perception from compressed data is crucial for advanced applications. However, the practical utility of this data is severely hampered by significant degradation, stemming from aggressive spatial downsampling, bit-depth reduction, and injected noise during acquisition and transmission."/>
   <meta property="og:url" content="URL OF THE WEBSITE"/>
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
@@ -14,7 +14,7 @@
   <meta property="og:image:height" content="630"/>
 
 
-  <meta name="twitter:title" content="UGDNet: A Unified Geometry-Decoupled Network for Compressed Depth Upsampling">
+  <meta name="twitter:title" content="Taming Compression Corruption: A Unified Geometry-Decoupled Network for Compressed Depth Upsampling>
   <meta name="twitter:description" content="High-fidelity 3D perception from compressed data is crucial for advanced applications. However, the practical utility of this data is severely hampered by significant degradation, stemming from aggressive spatial downsampling, bit-depth reduction, and injected noise during acquisition and transmission.">
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
   <meta name="twitter:image" content="static/images/framework.PNG">
@@ -24,7 +24,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>UGDNet: A Unified Geometry-Decoupled Network for Compressed Depth Upsampling</title>
+  <title>Taming Compression Corruption: A Unified Geometry-Decoupled Network for Compressed Depth Upsampling</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
@@ -53,7 +53,7 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">UGDNet: A Unified Geometry-Decoupled Network for Compressed Depth Upsampling</h1>
+            <h1 class="title is-1 publication-title">Taming Compression Corruption: A Unified Geometry-Decoupled Network for Compressed Depth Upsampling</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
@@ -140,7 +140,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            High-fidelity 3D perception from compressed data is crucial for advanced applications. However, the practical utility of this data is severely hampered by significant degradation, stemming from aggressive spatial downsampling, bit-depth reduction, and injected noise during acquisition and transmission. Current methods face a trio of fundamental challenges. First, bit-depth compression quantizes depth values, creating uniform representations in regions with subtle geometric variations and thereby impeding the recovery of fine geometric details. Second, the presence of densely distributed random noise corrupts the input, making it fundamentally challenging to accurately estimate the global geometric information of the scene. Finally, when extending from single frame to dynamic videos, these issues are critically exacerbated by temporal error accumulation. To address these challenges, we introduce a novel framework, termed the Unified Geometry-Decoupled Network (UGDNet), designed specifically for Unified Compressed Depth Upsampling. Our approach strategically decouples the reconstruction process into two distinct processes. To restore the intricate details lost to compression, the Detail-aware Content Preservation Module (DCPM) leverages the corresponding high-resolution RGB image as guidance to extract and inject fine details. To recover the overall geometric information from corrupted inputs, the Low-rank Feature Reconstruction (LFR) module learns a compact representation, effectively filtering noise while preserving essential geometric information. For videos, UGDNet explicitly models inter-frame relation using a dedicated pose estimation network, which provides the geometric context necessary for temporal processing. We then alleviate temporal cumulative error with a novel Temporal Depth Regularization (TDR) module. This module employs a two-pronged strategy, leveraging RGB-based consistency sampling to identify and filter major depth outliers, and a bit-quantization-inspired operation to correct for subtle depth drifts between frames. Extensive experiments demonstrate that our model achieves SoTA performance on both single frame and video tasks.
+            HHigh-fidelity 3D perception from compressed data is crucial for advanced applications. However, the practical utility of this data is severely hampered by significant degradation, stemming from aggressive spatial downsampling, bit-depth reduction, and injected noise during acquisition and transmission. Current methods face a trio of fundamental challenges. First, bit-depth compression quantizes depth values, creating uniform representations in regions with subtle geometric variations and thereby impeding the recovery of fine geometric details. Second, the presence of densely distributed random noise corrupts the input, making it fundamentally challenging to accurately estimate the global geometric information of the scene. Finally, when dealing with videos, these issues are critically exacerbated by temporal error accumulation. To address these challenges, we introduce a novel framework, termed the Unified Geometry-Decoupled Network (UGDNet), designed specifically for Unified Compressed Depth Upsampling. Our approach strategically decouples the reconstruction process into two distinct processes. To restore the intricate details lost to compression, the Detail-aware Content Preservation Module (DCPM) leverages the corresponding high-resolution RGB image as guidance to extract and inject fine details. To recover the global geometric information from corrupted inputs, the Low-rank Feature Reconstruction (LFR) module learns a compact representation, effectively filtering noise while preserving essential geometric cues. For videos, UGDNet explicitly models inter-frame relation using a dedicated pose estimation network, which provides the geometric context necessary for temporal processing. We then alleviate temporal cumulative error with a novel Temporal Depth Regularization (TDR) module.This module employs a two-pronged strategy, leveraging RGB-based consistency sampling to identify and filter major depth outliers, and a bit-quantization-inspired operation to correct for subtle depth drifts between frames. Extensive experiments demonstrate that our model achieves SoTA performance for unified compressed depth upsampling. 
           </p>
         </div>
       </div>
@@ -158,6 +158,11 @@
       <div class="columns is-centered">
         <div class="column is-four-fifths">
           <div class="image-container">
+
+            <figure class="image">
+              <img src="static/images/motivation.PNG" alt="项目动机"/>
+            </figure>
+
             <!-- 框架图 -->
             <figure class="image">
               <img src="static/images/framework.PNG" alt="框架结构"/>
@@ -167,7 +172,7 @@
             <div class="columns">
               <div class="column is-half">
                 <figure class="image">
-                  <img src="static/images/motivation.PNG" alt="项目动机"/>
+                  <img src="static/images/depthnet.PNG" alt="深度网络"/>
                 </figure>
               </div>
               <div class="column is-half">
@@ -224,31 +229,9 @@
               </div>
             </div>
 
-            <!-- fig8、tab5、tab6、tab7 2x2排列 -->
-            <div class="columns">
-              <div class="column is-half">
-                <figure class="image">
-                  <img src="static/images/fig8.PNG" alt="消融研究"/>
-                </figure>
-              </div>
-              <div class="column is-half">
-                <figure class="image">
-                  <img src="static/images/tab5.PNG" alt="表格5"/>
-                </figure>
-              </div>
-            </div>
-            <div class="columns">
-              <div class="column is-half">
-                <figure class="image">
-                  <img src="static/images/tab6.PNG" alt="表格6"/>
-                </figure>
-              </div>
-              <div class="column is-half">
-                <figure class="image">
-                  <img src="static/images/tab7.PNG" alt="表格7"/>
-                </figure>
-              </div>
-            </div>
+            <figure class="image">
+              <img src="static/images/ablation.PNG" alt="消融研究"/>
+            </figure>
             
             <!-- 可视化结果 -->
             <figure class="image">
@@ -351,7 +334,7 @@
           <i class="fas fa-copy"></i> Copy
         </button>
         <pre><code id="bibtex-content"><span class="bibtex-entry">@article</span><span class="bibtex-punctuation">{</span><span class="bibtex-key">zheng2025ugdnet</span><span class="bibtex-punctuation">,</span>
-  <span class="bibtex-field">title</span><span class="bibtex-punctuation">=</span><span class="bibtex-punctuation">{</span><span class="bibtex-value">UGDNet: A Unified Geometry-Decoupled Network for Compressed Depth Upsampling</span><span class="bibtex-punctuation">}</span><span class="bibtex-punctuation">,</span>
+  <span class="bibtex-field">title</span><span class="bibtex-punctuation">=</span><span class="bibtex-punctuation">{</span><span class="bibtex-value">Taming Compression Corruption: A Unified Geometry-Decoupled Network for Compressed Depth Upsampling</span><span class="bibtex-punctuation">}</span><span class="bibtex-punctuation">,</span>
   <span class="bibtex-field">author</span><span class="bibtex-punctuation">=</span><span class="bibtex-punctuation">{</span><span class="bibtex-value">Zheng, Huan and Han, Wencheng and Hoi, Steven C. H. and Shen, Jianbing</span><span class="bibtex-punctuation">}</span><span class="bibtex-punctuation">,</span>
   <span class="bibtex-field">journal</span><span class="bibtex-punctuation">=</span><span class="bibtex-punctuation">{</span><span class="bibtex-value">arxiv</span><span class="bibtex-punctuation">}</span><span class="bibtex-punctuation">,</span>
   <span class="bibtex-field">year</span><span class="bibtex-punctuation">=</span><span class="bibtex-punctuation">{</span><span class="bibtex-value">2025</span><span class="bibtex-punctuation">}</span><span class="bibtex-punctuation">,</span>
@@ -388,7 +371,7 @@
     // 清理格式，确保复制的是干净的BibTeX格式
     bibtexContent = bibtexContent.replace(/\s+/g, ' ').trim();
     bibtexContent = `@article{zheng2025ugdnet,
-  title={UGDNet: A Unified Geometry-Decoupled Network for Compressed Depth Upsampling},
+  title={Taming Compression Corruption: A Unified Geometry-Decoupled Network for Compressed Depth Upsampling},
   author={Zheng, Huan and Han, Wencheng and Hoi, Steven C. H. and Shen, Jianbing},
   journal={arxiv},
   year={2025},
