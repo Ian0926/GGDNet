@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // 初始化科技主题功能
 function initTechTheme() {
-  console.log('🚀 UGDNet科技主题初始化...');
+  console.log('🚀 GGDNet科技主题初始化...');
   
   // 添加加载完成类
   document.body.classList.add('theme-loaded');

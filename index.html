@@ -84,7 +84,7 @@
                     <div class="publication-links">
                          <!-- Arxiv PDF link -->
                       <span class="link-block">
-                        <a href="https://ian0926.github.io/UGDNet/" target="_blank"
+                        <a href="https://ian0926.github.io/GGDNet/" target="_blank"
                         class="external-link button is-normal is-rounded tech-button">
                         <span class="icon">
                           <i class="fas fa-file-pdf"></i>
@@ -106,7 +106,7 @@
 
                   <!-- Github link -->
                   <span class="link-block">
-                    <a href="https://ian0926.github.io/UGDNet/" target="_blank"
+                    <a href="https://ian0926.github.io/GGDNet/" target="_blank"
                     class="external-link button is-normal is-rounded tech-button">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -117,7 +117,7 @@
 
                 <!-- ArXiv abstract Link -->
                 <span class="link-block">
-                  <a href="https://ian0926.github.io/UGDNet/" target="_blank"
+                  <a href="https://ian0926.github.io/GGDNet/" target="_blank"
                   class="external-link button is-normal is-rounded tech-button">
                   <span class="icon">
                     <i class="ai ai-arxiv"></i>
@@ -128,7 +128,7 @@
 
                 <!-- Dataset Link -->
                 <span class="link-block">
-                  <a href="https://ian0926.github.io/UGDNet/" target="_blank"
+                  <a href="https://ian0926.github.io/GGDNet/" target="_blank"
                   class="external-link button is-normal is-rounded tech-button">
                   <span class="icon">
                     <i class="fas fa-database"></i>
@@ -153,7 +153,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            HHigh-fidelity 3D perception from compressed data is crucial for advanced applications. However, the practical utility of this data is severely hampered by significant degradation, stemming from aggressive spatial downsampling, bit-depth reduction, and injected noise during acquisition and transmission. Current methods face a trio of fundamental challenges. First, bit-depth compression quantizes depth values, creating uniform representations in regions with subtle geometric variations and thereby impeding the recovery of fine geometric details. Second, the presence of densely distributed random noise corrupts the input, making it fundamentally challenging to accurately estimate the global geometric information of the scene. Finally, when dealing with videos, these issues are critically exacerbated by temporal error accumulation. To address these challenges, we introduce a novel framework, termed the Unified Geometry-Decoupled Network (UGDNet), designed specifically for Unified Compressed Depth Upsampling. Our approach strategically decouples the reconstruction process into two distinct processes. To restore the intricate details lost to compression, the Detail-aware Content Preservation Module (DCPM) leverages the corresponding high-resolution RGB image as guidance to extract and inject fine details. To recover the global geometric information from corrupted inputs, the Low-rank Feature Reconstruction (LFR) module learns a compact representation, effectively filtering noise while preserving essential geometric cues. For videos, UGDNet explicitly models inter-frame relation using a dedicated pose estimation network, which provides the geometric context necessary for temporal processing. We then alleviate temporal cumulative error with a novel Temporal Depth Regularization (TDR) module.This module employs a two-pronged strategy, leveraging RGB-based consistency sampling to identify and filter major depth outliers, and a bit-quantization-inspired operation to correct for subtle depth drifts between frames. Extensive experiments demonstrate that our model achieves SoTA performance for unified compressed depth upsampling. 
+            HHigh-fidelity 3D perception from compressed data is crucial for advanced applications. However, the practical utility of this data is severely hampered by significant degradation, stemming from aggressive spatial downsampling, bit-depth reduction, and injected noise during acquisition and transmission. Current methods face a trio of fundamental challenges. First, bit-depth compression quantizes depth values, creating uniform representations in regions with subtle geometric variations and thereby impeding the recovery of fine geometric details. Second, the presence of densely distributed random noise corrupts the input, making it fundamentally challenging to accurately estimate the global geometric information of the scene. Finally, when dealing with videos, these issues are critically exacerbated by temporal error accumulation. To address these challenges, we introduce a novel framework, termed the Generalized Geometry-Decoupled Network (GGDNet), designed specifically for Unified Compressed Depth Upsampling. Our approach strategically decouples the reconstruction process into two distinct processes. To restore the intricate details lost to compression, the Detail-aware Content Preservation Module (DCPM) leverages the corresponding high-resolution RGB image as guidance to extract and inject fine details. To recover the global geometric information from corrupted inputs, the Low-rank Feature Reconstruction (LFR) module learns a compact representation, effectively filtering noise while preserving essential geometric cues. For videos, GGDNet explicitly models inter-frame relation using a dedicated pose estimation network, which provides the geometric context necessary for temporal processing. We then alleviate temporal cumulative error with a novel Temporal Depth Regularization (TDR) module.This module employs a two-pronged strategy, leveraging RGB-based consistency sampling to identify and filter major depth outliers, and a bit-quantization-inspired operation to correct for subtle depth drifts between frames. Extensive experiments demonstrate that our model achieves SoTA performance for unified compressed depth upsampling. 
           </p>
         </div>
       </div>
@@ -348,7 +348,7 @@
         <button class="copy-button" onclick="copyBibTeX()">
           <i class="fas fa-copy"></i> Copy
         </button>
-        <pre><code id="bibtex-content"><span class="bibtex-entry">@article</span><span class="bibtex-punctuation">{</span><span class="bibtex-key">zheng2025ugdnet</span><span class="bibtex-punctuation">,</span>
+        <pre><code id="bibtex-content"><span class="bibtex-entry">@article</span><span class="bibtex-punctuation">{</span><span class="bibtex-key">zheng2025ggdnet</span><span class="bibtex-punctuation">,</span>
   <span class="bibtex-field">title</span><span class="bibtex-punctuation">=</span><span class="bibtex-punctuation">{</span><span class="bibtex-value">GGDNet: A Generalized Geometry-Decoupled Network for Compressed Depth Upsampling</span><span class="bibtex-punctuation">}</span><span class="bibtex-punctuation">,</span>
   <span class="bibtex-field">author</span><span class="bibtex-punctuation">=</span><span class="bibtex-punctuation">{</span><span class="bibtex-value">Zheng, Huan and Han, Wencheng and Hoi, Steven C. H. and Shen, Jianbing</span><span class="bibtex-punctuation">}</span><span class="bibtex-punctuation">,</span>
   <span class="bibtex-field">journal</span><span class="bibtex-punctuation">=</span><span class="bibtex-punctuation">{</span><span class="bibtex-value">arxiv</span><span class="bibtex-punctuation">}</span><span class="bibtex-punctuation">,</span>
@@ -385,7 +385,7 @@
     
     // 清理格式，确保复制的是干净的BibTeX格式
     bibtexContent = bibtexContent.replace(/\s+/g, ' ').trim();
-    bibtexContent = `@article{zheng2025ugdnet,
+    bibtexContent = `@article{zheng2025ggdnet,
   title={GGDNet: A Generalized Geometry-Decoupled Network for Compressed Depth Upsampling},
   author={Zheng, Huan and Han, Wencheng and Hoi, Steven C. H. and Shen, Jianbing},
   journal={arxiv},

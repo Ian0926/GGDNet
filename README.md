@@ -1,1 +1,1 @@
-https://ian0926.github.io/UGDNet/
+https://ian0926.github.io/GGDNet/
