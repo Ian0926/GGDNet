@@ -138,7 +138,7 @@
 
 /* === 卡片布局 === */
 .tech-theme .card {
-  background: var(--glass-bg);
+  background: #000000;
   backdrop-filter: var(--backdrop-blur);
   border: 1px solid var(--glass-border);
   border-radius: var(--radius-lg);
@@ -148,7 +148,7 @@
 }
 
 .tech-theme .card:hover {
-  background: rgba(255, 255, 255, 0.12);
+  background: #111111;
   border-color: var(--neon-blue);
   box-shadow: var(--shadow-lg), var(--glow-blue);
   transform: translateY(-4px);

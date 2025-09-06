@@ -1,0 +1,100 @@
+/* ===== 强制黑色主题覆盖 ===== */
+
+/* 最高优先级的黑色背景覆盖 */
+* {
+  background-color: #000000 !important;
+  background: #000000 !important;
+}
+
+/* 所有区域都设置为黑色背景 */
+.hero.is-light,
+.section.hero.is-light,
+.content.has-text-justified {
+  background-color: #000000 !important;
+  background: #000000 !important;
+}
+
+/* 图片容器保持透明 */
+.image-container,
+figure.image,
+img {
+  background-color: transparent !important;
+  background: transparent !important;
+}
+
+/* 强制黑色背景 - 重要元素 */
+html,
+body,
+body::before,
+body.tech-theme,
+.hero,
+.hero-body,
+.section,
+.container,
+.columns,
+.column,
+footer,
+.footer,
+.publication-links,
+.link-block a,
+.bibtex-container,
+pre,
+code,
+.title,
+.subtitle,
+p,
+h1, h2, h3, h4, h5, h6 {
+  background: #000000 !important;
+  background-color: #000000 !important;
+  background-image: none !important;
+}
+
+/* 移除所有背景图案和纹理 */
+body::before,
+.hero::before,
+.hero-body::before,
+.section::before {
+  background-image: none !important;
+  background: #000000 !important;
+  content: none !important;
+}
+
+/* 强制黑色背景 - 覆盖所有可能的CSS变量 */
+:root {
+  --warm-cream: #000000 !important;
+  --light-bg: #000000 !important;
+  --dark-bg: #000000 !important;
+  --primary-gradient: #000000 !important;
+  --secondary-gradient: #000000 !important;
+  --glass-bg: rgba(0, 0, 0, 0.95) !important;
+}
+
+/* 覆盖Bulma框架的默认背景 */
+.hero.is-primary,
+.hero.is-info,
+.hero.is-success,
+.hero.is-warning,
+.hero.is-danger {
+  background-color: #000000 !important;
+}
+
+/* 确保文字在黑色背景上可见 */
+body,
+.hero,
+.section,
+.title,
+.subtitle,
+p,
+h1, h2, h3, h4, h5, h6,
+a {
+  color: #ffffff !important;
+}
+
+/* 链接颜色调整 */
+a {
+  color: #cccccc !important;
+}
+
+a:hover {
+  color: #ffffff !important;
+}

@@ -3,9 +3,9 @@
   --primary-gradient: linear-gradient(135deg, #f4e4bc 0%, #f2c2a7 100%);
   --secondary-gradient: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
   
-  /* 背景色 - 浅米色调 */
-  --dark-bg: #4a4a3a;
-  --light-bg: #faf8f3;
+  /* 背景色 - 黑色背景 */
+  --dark-bg: #000000;
+  --light-bg: #000000;
   
   /* 文字颜色 - 深灰色代替纯黑 */
   --text-primary: #4a4a4a;
@@ -18,14 +18,14 @@
   --complement-green: #8fb3a3;
   --complement-blue: #a3b3c4;
   
-  /* 阴影效果 - 更温馨的阴影 */
-  --shadow-xs: 0 2px 4px rgba(74, 74, 74, 0.08);
-  --shadow-sm: 0 4px 8px rgba(74, 74, 74, 0.10);
-  --shadow-md: 0 8px 25px rgba(74, 74, 74, 0.12);
-  --shadow-lg: 0 15px 35px rgba(74, 74, 74, 0.15);
-  --shadow-xl: 0 25px 50px rgba(74, 74, 74, 0.18);
+  /* 阴影效果 - 黑色背景上的阴影 */
+  --shadow-xs: 0 2px 4px rgba(0, 0, 0, 0.3);
+  --shadow-sm: 0 4px 8px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 8px 25px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 15px 35px rgba(0, 0, 0, 0.6);
+  --shadow-xl: 0 25px 50px rgba(0, 0, 0, 0.7);
   --warm-shadow: 0 8px 32px rgba(225, 112, 135, 0.20);
-  --soft-shadow: 0 4px 20px rgba(250, 248, 243, 0.9);
+  --soft-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
 }
 
 * {
@@ -409,7 +409,7 @@ body::before {
 .bibtex-container {
   position: relative;
   margin-top: 2rem;
-  background: linear-gradient(135deg, #fefcf8 0%, #f7f3ed 100%);
+  background: #000000;
   border-radius: 20px;
   box-shadow: var(--shadow-md);
   padding: 2.5rem;
@@ -483,8 +483,8 @@ body::before {
 /* BibTeX代码块样式 */
 pre {
   position: relative;
-  background: linear-gradient(145deg, #2c3e50 0%, #34495e 100%);
-  color: #ecf0f1;
+  background: #000000;
+  color: #ffffff;
   padding: 2.5rem;
   border-radius: 15px;
   overflow-x: auto;
@@ -682,7 +682,7 @@ pre code::-moz-selection {
   color: #ecf0f1;
   padding: 4rem 1.5rem 2rem;
   margin-top: 4rem;
-  background: var(--primary-gradient);
+  background: #000000;
 }
 
 .footer a {
@@ -958,4 +958,60 @@ body::after {
   font-size: 2rem;
   opacity: 0.1;
   z-index: 1;
+}
+
+/* 全局黑色背景覆盖 - 强制将所有非白非灰背景设置为黑色 */
+body,
+body::before,
+.hero,
+.hero::before,
+.hero-body,
+.section,
+.container,
+.columns,
+.column,
+footer,
+.footer,
+.publication-links,
+.link-block a,
+.bibtex-container,
+pre,
+code {
+  background: #000000 !important;
+  background-color: #000000 !important;
+  background-image: none !important;
+}
+
+/* 保留白色和灰色区域的背景 */
+.hero.is-light,
+.section.hero.is-light,
+.content.has-text-justified,
+.image-container,
+figure.image,
+img {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* 强制覆盖所有渐变背景 */
+.hero,
+.hero::before,
+.hero-body,
+.publication-title,
+.publication-authors,
+.link-block a {
+  background: #000000 !important;
+  background-color: #000000 !important;
+  background-image: none !important;
+}
+
+/* 移除所有背景纹理和装饰 */
+body::before {
+  background-image: none !important;
+  background: #000000 !important;
+}
+
+.hero::before {
+  background-image: none !important;
+  background: #000000 !important;
 }

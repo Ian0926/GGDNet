@@ -2,11 +2,7 @@
 
 /* === 头部区域美化 === */
 .tech-theme .hero {
-  background: linear-gradient(135deg, 
-    rgba(250, 247, 242, 0.9) 0%, 
-    rgba(255, 245, 240, 0.95) 50%, 
-    rgba(255, 214, 204, 0.9) 100%
-  );
+  background: #000000;
   backdrop-filter: var(--backdrop-blur);
   border-bottom: 1px solid var(--glass-border);
   position: relative;
@@ -184,7 +180,7 @@
 }
 
 .tech-theme .hero.is-light {
-  background: var(--glass-bg);
+  background: #000000;
   backdrop-filter: var(--backdrop-blur);
   border: 1px solid var(--glass-border);
   border-radius: var(--radius-xl);
@@ -195,7 +191,7 @@
 }
 
 .tech-theme .hero.is-light:hover {
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.95);
   border-color: var(--peach);
   box-shadow: var(--shadow-lg), var(--glow-peach);
   transform: translateY(-2px);
@@ -226,7 +222,7 @@
 }
 
 .tech-theme .content.has-text-justified:hover {
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.95);
   border-color: var(--soft-coral);
   box-shadow: var(--shadow-md), var(--glow-coral);
 }
@@ -257,7 +253,7 @@
 }
 
 .tech-theme .image-container figure:hover {
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.95);
   border-color: var(--peach);
   box-shadow: var(--shadow-lg), var(--glow-peach);
   transform: translateY(-8px) scale(1.02);

@@ -16,27 +16,23 @@
 /* Firefox 滚动条样式兼容 */
 @-moz-document url-prefix() {
   .tech-theme .glass {
-    background: rgba(15, 23, 42, 0.98) !important;
+    background: rgba(0, 0, 0, 0.98) !important;
   }
   
   /* Firefox 下的模糊效果优化 */
   .tech-theme .hero {
-    background: linear-gradient(135deg, 
-      rgba(10, 14, 23, 0.95) 0%, 
-      rgba(15, 23, 42, 0.98) 50%, 
-      rgba(30, 41, 59, 0.95) 100%
-    ) !important;
+    background: #000000 !important;
   }
 }
 
 /* IE 11 兼容性处理 (基本样式回退) */
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
   .tech-theme {
-    background: #0a0e17 !important;
+    background: #000000 !important;
   }
   
   .tech-theme .glass {
-    background: rgba(15, 23, 42, 0.95) !important;
+    background: rgba(0, 0, 0, 0.95) !important;
     border: 1px solid rgba(255, 255, 255, 0.2) !important;
   }
   
